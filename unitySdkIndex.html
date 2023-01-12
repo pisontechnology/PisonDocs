@@ -1,0 +1,726 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Pison Unity SDK Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #ef8540;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #ef8540;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #ef8540;
+}
+.highlight .nc {
+  color: #ef8540;
+}
+.highlight .nd {
+  color: #ef8540;
+}
+.highlight .ne {
+  color: #ef8540;
+}
+.highlight .nf, .highlight .fm {
+  color: #ef8540;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="unitySdkIndex" data-languages="[&quot;csharp&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-f0bbc5fb.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="csharp">csharp</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#requirements" class="toc-h2 toc-link" data-title="Requirements">Requirements</a>
+                  </li>
+                  <li>
+                    <a href="#quick-start" class="toc-h2 toc-link" data-title="Quick Start">Quick Start</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#pison-sdk-use" class="toc-h1 toc-link" data-title="Pison SDK Use">Pison SDK Use</a>
+          </li>
+          <li>
+            <a href="#pisonmanager-cs" class="toc-h1 toc-link" data-title="PisonManager.cs">PisonManager.cs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#direct-connection" class="toc-h2 toc-link" data-title="Direct Connection">Direct Connection</a>
+                  </li>
+                  <li>
+                    <a href="#discovery-connection" class="toc-h2 toc-link" data-title="Discovery Connection">Discovery Connection</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#pisonevents-cs" class="toc-h1 toc-link" data-title="PisonEvents.cs">PisonEvents.cs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#event-data" class="toc-h2 toc-link" data-title="Event Data">Event Data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#pisonemulator-cs" class="toc-h1 toc-link" data-title="PisonEmulator.cs">PisonEmulator.cs</a>
+          </li>
+          <li>
+            <a href="#included-examples" class="toc-h1 toc-link" data-title="Included Examples">Included Examples</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#data-examples" class="toc-h2 toc-link" data-title="Data Examples">Data Examples</a>
+                  </li>
+                  <li>
+                    <a href="#simple-examples" class="toc-h2 toc-link" data-title="Simple Examples">Simple Examples</a>
+                  </li>
+                  <li>
+                    <a href="#swipegesture-examples" class="toc-h2 toc-link" data-title="SwipeGesture Examples">SwipeGesture Examples</a>
+                  </li>
+                  <li>
+                    <a href="#menu-examples" class="toc-h2 toc-link" data-title="Menu Examples">Menu Examples</a>
+                  </li>
+                  <li>
+                    <a href="#vulcan-swipegesture-examples" class="toc-h2 toc-link" data-title="Vulcan SwipeGesture Examples">Vulcan SwipeGesture Examples</a>
+                  </li>
+                  <li>
+                    <a href="#vulan-gesture-combination-examples" class="toc-h2 toc-link" data-title="Vulan Gesture Combination Examples">Vulan Gesture Combination Examples</a>
+                  </li>
+                  <li>
+                    <a href="#wrist-gestures" class="toc-h2 toc-link" data-title="Wrist Gestures">Wrist Gestures</a>
+                  </li>
+                  <li>
+                    <a href="#hand-zones" class="toc-h2 toc-link" data-title="Hand Zones">Hand Zones</a>
+                  </li>
+                  <li>
+                    <a href="#pisonexampleactivationevents-cs" class="toc-h2 toc-link" data-title="PisonExampleActivationEvents.cs">PisonExampleActivationEvents.cs</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#permissions-required" class="toc-h1 toc-link" data-title="Permissions Required">Permissions Required</a>
+          </li>
+          <li>
+            <a href="#contact-and-support" class="toc-h1 toc-link" data-title="Contact and Support">Contact and Support</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li>Contact Arthur Wollocko for Support</li>
+            <li>on Pison Unity SDK</li>
+            <li><a href='mailto:arthur@pison.com'>arthur@pison.com </a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<blockquote>
+<p>You will be able to view code examples or notes in this dark area.</p>
+</blockquote>
+
+<p>Welcome to the <strong><em>Pison Unity SDK</em></strong>! </p>
+
+<p>You can use our SDK to access information from the Pison Device within the Unity environment.</p>
+
+<blockquote>
+<p>Tested with Unity Versions 2019.x+</p>
+</blockquote>
+
+<p>The Unity SDK is written in C#, but we support various other languages with other SDKs (Reach out to our contact email below).  </p>
+<h2 id='requirements'>Requirements</h2>
+<p>Utilization of the Pison Unity SDK requires:</p>
+
+<ul>
+<li>Unity Version 2019.2.x+, though native implementation so should work with previous versions as well</li>
+<li>Pison GAMBIT device, powered on</li>
+<li>Android device with Hubapp (TODO: LINK) application installed and connected to Pison device</li>
+<li>Android device on same network as the Unity application device (or the same device)</li>
+</ul>
+<h2 id='quick-start'>Quick Start</h2>
+<blockquote>
+<p>Follow these instructions to gain access to the SDK, along with integrate the Pison device to any Unity Project in &lt; 2 minutes!</p>
+</blockquote>
+<h3 id='donwloading-sdk'>Donwloading SDK</h3>
+<p><strong>Option 1:</strong> Clone Repo</p>
+
+<ol>
+<li>Click Code then copy HTTPS</li>
+<li>Using git GUI of couse clone repository</li>
+<li>From cloned repostory navigate to UnitySDK&gt;Assets&gt;Pison</li>
+<li>Copy the Pison Folder</li>
+<li>Paste it in desired unity project</li>
+</ol>
+
+<p><strong>Option 2:</strong> Download files</p>
+
+<ol>
+<li>Click Code&gt;Download ZIP</li>
+<li>Export ZIPed file</li>
+<li>In unzipped file navigate UnitySDK&gt;Assets&gt;Pison</li>
+<li>Copy the Pison Folder</li>
+<li>Paste it in desired unity project </li>
+</ol>
+<h3 id='unity-set-up'>Unity Set Up</h3>
+<p>Find the PisonManager Prefab. This is located at .../Pison/Prefabs</p>
+
+<p>Place the prefab into the scene. </p>
+
+<blockquote>
+<p><strong>Note: &#39;PisonManager.prefab&#39; implements DontDestroyOnLoad() -- meaning it will persist between scenes!</strong></p>
+</blockquote>
+
+<p>Configure the PisonManager. If building to an Android device, this is already configured for localhost. Otherwise, specify IP or Discovery.</p>
+
+<p>The PisonManager should be configured, and you can access the PisonManager directly, or bind to PisonEvents</p>
+<h1 id='pison-sdk-use'>Pison SDK Use</h1>
+<blockquote>
+<p>Easy setup is enabled through use of the PisonManager prefab, which contains all relevant scripts needed to develop on the Pison Unity SDK.</p>
+
+<p>This contains all three main scripts
+Use of the Pison device within the Unity environment is managed via the <strong><em>PisonManager</em></strong>. </p>
+
+<p>Details on each script&#39;s inspector variables can be found below in their respected section.</p>
+</blockquote>
+
+<p>Core SDK Composition:</p>
+
+<table><thead>
+<tr>
+<th>Class Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PisonManager.cs</td>
+<td>Required</td>
+<td>Provides connection and data callbacks from the Pison Device</td>
+</tr>
+<tr>
+<td>PisonEvents.cs</td>
+<td>Optional</td>
+<td>Provides event-based updates from the Pison Device</td>
+</tr>
+<tr>
+<td>PisonEmulator.cs</td>
+<td>Optional</td>
+<td>Provides in-editor functionality to invoke updates to PisonManager and PisonEvents</td>
+</tr>
+</tbody></table>
+<h1 id='pisonmanager-cs'>PisonManager.cs</h1>
+<p>The PisonManager.cs class is the main class within the Pison Unity SDK. This contains critical connection capabilities (connection to the Pison Server/Hubapp), as well as callbacks from the SDK when device state changes.
+The PisonManager provides real-time access to current device state, including current:</p>
+
+<blockquote>
+<p>Note: Orientation Euler Angles double as a compass on the device, with 0 degrees (euler.y) pointing to true-north</p>
+</blockquote>
+
+<ul>
+<li>Activation Status</li>
+<li>IMU Information (Gyro, Accel)</li>
+<li>Orientation (Euler Angles and Quaternion)</li>
+<li>Gesture callbacks</li>
+<li>Device State (battery, connection)</li>
+</ul>
+
+<p><strong>Nice to know Inspector variables:</strong></p>
+
+<ul>
+<li>Use Auto Discorery Bind First (bool):
+
+<ul>
+<li>If true will automatically connect Hubapp address to computers address</li>
+</ul></li>
+<li>Hubapp Server Adress (string):
+
+<ul>
+<li>Used to mannually set Hubapp to computers address</li>
+</ul></li>
+<li>Pison Conection Type (enum)
+
+<ul>
+<li>Gestures and Connections: Get only gesture information from Hubapp</li>
+<li>Raw Data nd Connections: Get only raw data of instraments in Pison Device</li>
+</ul></li>
+</ul>
+<h2 id='direct-connection'>Direct Connection</h2>
+<blockquote>
+<p>To execute a direct connection, the PisonManager.cs invokes the following code in its Start() function:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code> <span class="kt">string</span> <span class="n">hubappServerAddress</span> <span class="p">=</span> <span class="s">"127.0.0.1"</span><span class="p">;</span>
+ <span class="kt">int</span> <span class="n">port</span> <span class="p">=</span> <span class="m">8002</span><span class="p">;</span>
+ <span class="n">pisonClient</span> <span class="p">=</span> <span class="n">sdk</span><span class="p">.</span><span class="nf">newPisonClient</span><span class="p">(</span><span class="n">hubappServerAddress</span><span class="p">,</span> <span class="s">"Hubapp Pison Server"</span><span class="p">,</span> <span class="n">port</span><span class="p">);</span>
+ <span class="n">pisonClient</span><span class="p">.</span><span class="nf">BindToPisonServer</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Note: 8002 is the default Hubapp connection port.</p>
+</blockquote>
+
+<p>The Pison Unity SDK supports direct connection to an instance of the Pison Server, which runs inside &quot;Hubapp&quot; on the Android phone connected to the Pison Device. 
+Direct connection occurs via an IP address and a port. If using the same device for Hubapp and the Unity application, localhost (127.0.0.1) is typically preferred.</p>
+<h2 id='discovery-connection'>Discovery Connection</h2>
+<blockquote>
+<p>To execute discovery connection, the PisonManager.cs (optionally) invokes the following code in its Start() function:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="n">PisonSdk</span> <span class="n">sdk</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">PisonSdk</span><span class="p">();</span>
+<span class="n">sdk</span><span class="p">.</span><span class="nf">BindToFirstDiscoveredServer</span><span class="p">(</span><span class="n">client</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="s">$"Discovered client! </span><span class="p">{</span><span class="n">client</span><span class="p">.</span><span class="nf">GetIdentifier</span><span class="p">()}</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">pisonClient</span> <span class="p">=</span> <span class="n">client</span><span class="p">;</span>
+    <span class="n">pisonClient</span><span class="p">.</span><span class="nf">BindToPisonServer</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="nf">DeviceConnected</span><span class="p">();</span>
+<span class="p">});</span>
+
+</code></pre></div>
+<blockquote>
+<p>Note: 8002 is the default Hubapp connection port.</p>
+</blockquote>
+
+<p>The Pison Unity SDK supports direct connection to an instance of the Pison Server, which runs inside &quot;Hubapp&quot; on the Android phone connected to the Pison Device.
+Discovery connection does not require an IP address and a port, but instead searches the local network for PisonServer instances. Once found, a connection is established.</p>
+<h1 id='pisonevents-cs'>PisonEvents.cs</h1>
+<p>The PisonEvents.cs class is an optional subclass that REQUIRES the PisonManager to be on the same GameObject. 
+The Unity Prefab included (in /Prefabs) contains this structure. 
+The PisonEvents provides event-based access to device adjustments. These include</p>
+
+<blockquote>
+<p>Note: Orientation Euler Angles double as a compass on the device, with 0 degrees (euler.y) pointing to true-north</p>
+</blockquote>
+
+<ul>
+<li>Activation changes</li>
+<li>IMU Information changes (Gyro, Accel)</li>
+<li>Orientation changes(Euler Angles and Quaternion)</li>
+<li>Gesture events</li>
+<li>Device State changes (battery, connection)</li>
+</ul>
+<h2 id='event-data'>Event Data</h2>
+<table><thead>
+<tr>
+<th>EventName</th>
+<th>Paramters Passed</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>OnGesture</td>
+<td>OnGestureDelegate(ImuGesture gesture)</td>
+<td>As a gesture is executed, the ImuGesture &#39;gesture&#39; contains the new gesture</td>
+</tr>
+<tr>
+<td>OnOrientation</td>
+<td>OnOrientationChangedDelegate(Vector3 newEulers)</td>
+<td>As orientation adjustments are made, the Vector3 newEulers contains the new euler Values. <strong>Note: euler.y doubles as a compass, with 0 degrees pointing true north</strong></td>
+</tr>
+<tr>
+<td>OnQuaternion</td>
+<td>OnQuaternionChangedDelegate(Vector4 newQuat)</td>
+<td>As rotation adjustments are made, the Vector4 newQuat contains the new quaternion rotation Values.</td>
+</tr>
+<tr>
+<td>OnImuAccelerationGyro</td>
+<td>OnImuChangedDelegate(Vector3 newAcceleration, Vector3 newGyroscope)</td>
+<td>As IMU adjustments are made, the Vector3s newAcceleration and newGyrsoscope contain IMU information with the new IMU values</td>
+</tr>
+<tr>
+<td>OnActivation</td>
+<td>OnActivationDelegate(ActivationStates activation)</td>
+<td>As an activation (Index finger, watchcheck) is executed, the ActivationStates &#39;activation&#39; contains the new state information (including if it is an ActivationState.HOLD or ActivationState.NONE)</td>
+</tr>
+<tr>
+<td>OnDeviceState</td>
+<td>OnDeviceStateDelegate(DeviceState deviceState)</td>
+<td>As a state is changed for the device, this event is fired. Device states include connection and battery information</td>
+</tr>
+<tr>
+<td>OnDeviceConnection</td>
+<td>OnDeviceConnectionDelegate(bool connected)</td>
+<td>As the device is connected and disconnected, this event is fired with the new connected value (boolean). ** Note: Currently activation events are not called by the SDK. **</td>
+</tr>
+<tr>
+<td>OnDeviceError</td>
+<td>OnDeviceErrorDelegate(string error)</td>
+<td>As device errors are encountered, this event is fired and contains the error message</td>
+</tr>
+</tbody></table>
+<h1 id='pisonemulator-cs'>PisonEmulator.cs</h1>
+<blockquote>
+<p>For full functionality testing, please make sure to test against an actual Pison Device
+The PisonEmulator is a developer tool that allows for rapid prototype and testing within the editor.</p>
+</blockquote>
+
+<p>It provides numerous buttons and sliders (within the Unity editor) -- See custom editor window --  that enact changes on the PisonManager.cs and invoke events on the PisonEvents.cs classes to test functionality while running the application in editor.</p>
+<h1 id='included-examples'>Included Examples</h1>
+<p>The core Pison Unity SDK provides many simple usage examples to guide developer interaction with the Pison device.</p>
+<h2 id='data-examples'>Data Examples</h2>
+<blockquote>
+<p>Use this example to help test connectivity between Pison Device and Unity Engine</p>
+</blockquote>
+
+<p>Data scene will show if the Pison Device is connected properly, along with display time and the ADC raw data. </p>
+<h2 id='simple-examples'>Simple Examples</h2>
+<blockquote>
+<p>Use this example to view both real-time access of data from the device, as well as utilization of the Events and Haptic interfaces</p>
+</blockquote>
+
+<p>The Simple example provides readouts of all of the values from the PisonManager in real time, as well as binding to several of the PisonEvent functions for gesture and connectivity/device state support.
+Outputs are shown accessed at Unity&#39;s resolution via direct access to the PisonManager variables</p>
+
+<p>Gestures made will stimulate the user with a haptic response, so this is a good place to look for Haptic stimulation</p>
+<h2 id='swipegesture-examples'>SwipeGesture Examples</h2>
+<blockquote>
+<p>Use this example to see event-driven interactions in the form of a simple game
+Provides an event-based binding example to pison events for gesture, moving providing a &quot;goal&quot; state for the cube, and allowing 
+the user to move the cube around the environment via gesture. </p>
+</blockquote>
+
+<p>Activation is also visualized, as the Pison logo on top of the cube.</p>
+<h2 id='menu-examples'>Menu Examples</h2>
+<blockquote>
+<p>Use this example to see event-driven UI menu navigation that supports Unity&#39;s native UI event system
+This is a simple example of menu-based navigation, which allows for user gesture to navigate the menu.
+Gesture Roll Left/Right is used to focus on the next button, and Gesture IndexClick is used for selection.</p>
+</blockquote>
+
+<p>This implementation utilizes unity&#39;s native event system, firing the OnClick behavior of the buttons when selected. </p>
+<h2 id='vulcan-swipegesture-examples'>Vulcan SwipeGesture Examples</h2>
+<blockquote>
+<p><strong>Example Idea:</strong> This example can show the new gestures Unity SDK supports with the Vulcan device. Specifically thumb swipe, and full hand extension</p>
+</blockquote>
+
+<p>Moves a cube with thumb swipes in the direction of a provided goal, along with changing cube color with a full hand hold.</p>
+<h2 id='vulan-gesture-combination-examples'>Vulan Gesture Combination Examples</h2>
+<blockquote>
+<p><strong>Example Idea:</strong> This example can show how two types of gestures can be stringed together to create a sequence of inputs to interact with different events.</p>
+</blockquote>
+
+<p>Navigate a selection process between different cubes, yet can only select new objects after a wrist roll into thumb swipe in desired direction. </p>
+<h2 id='wrist-gestures'>Wrist Gestures</h2>
+<blockquote>
+<p><strong>Example Idea:</strong> This example could have a UI panel on the top half of the screen and a cube on the bottom half of the screen. Similar to the Swipe gesture example, the cube can be on a track of some kind, where a goal particle effect will appear either on the right, left, or middle. If the goal is on the right the UI will update telling you to &quot;right wrist flick&quot;, doing so will have the cube slide to the right before settling back to the middle. If the goal is on the left it will be the same goal as to the right but instead, the UI will update to say &quot;left wrist flick&quot;, and doing the action will cause the cube to slide to the left before resettling in the middle. If the goal is in the middle the UI will update saying &quot;Wrist shake&quot; if done the cube will shake in place back and forth, for a couple of seconds once settled will activate the next goal. This will help demonstrate the gestures functionality for anyone interested.</p>
+</blockquote>
+
+<p><strong><em>Work In Progress</em></strong></p>
+<h2 id='hand-zones'>Hand Zones</h2>
+<blockquote>
+<p><strong>Example Idea:</strong> This example could have a UI panel on the left half of the screen and a cube on the right half of the screen with a Pison logo on it. If the hand is in the NORMAL state the cube stays in the center of the screen. If the hand enters the HANDUP state the cube will slide to the top of the screen, if the hand is in the HANDDOWN state the cube will go to the bottom of the screen. if the hand is inverted the cube will flip sized showing a different type of Pison logo. The UI will display if the hand is inverted, the current hand state and the acceleration of the Pison Device. This will help demonstrate all the major factors of the modular for anyone looking into it. </p>
+</blockquote>
+
+<p><strong><em>Work In Progress</em></strong></p>
+<h2 id='pisonexampleactivationevents-cs'>PisonExampleActivationEvents.cs</h2>
+<blockquote>
+<p>Use this example to see how to bind Unity events (in-editor) to pison generated events easily. 
+This is a very abstract and flexible implementation of binding a Unity event to the activation of the pison device.</p>
+</blockquote>
+
+<p>It will provide a Unity event list for both Activation and WatchCheck, and when those occur, fire each of the methods in the event list provided by the developer within the unity editor.
+This script is not currently deployed in any scene, but provided as a reference</p>
+<h1 id='permissions-required'>Permissions Required</h1>
+<blockquote>
+<p>Android permissions enabled via (placed into the Android Manifest):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="p">&lt;</span><span class="n">uses</span><span class="p">-</span><span class="n">permission</span> <span class="n">android</span><span class="p">:</span><span class="n">name</span><span class="p">=</span><span class="s">"android.permission.INTERNET"</span> <span class="p">/&gt;</span> 
+</code></pre></div>
+<p>Communications with the pison device require local area network permissions.
+Therefore, depending on the platform, please ensure your permissions are properly set. </p>
+
+<p>Windows Standalone -- Please make sure your firewall is set to allow networking through for the selected application/Unity editor. </p>
+
+<p>UWP (HoloLens) -- Please enable the capabilities (via the manifest, or via Unity&#39;s manipulation of the manifest in Player Settings &gt; Publishing Settings</p>
+
+<p>Android -- Either directly place the permissions.INTERNET permission into the manifest, or utilize Unity&#39;s PlayerSettings to enable this from the editor. In the latter case, Unity will add the appropriate permissions into the manifest automatically</p>
+<h1 id='contact-and-support'>Contact and Support</h1>
+<blockquote>
+<p><strong><em>TBD</em></strong></p>
+</blockquote>
+
+<p>For support on the Unity SDK, reach out to <strong><em>TBD</em></strong> for assistance.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="csharp">csharp</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
