@@ -25,7 +25,7 @@ module Rouge
         palette :soft_yellow    => '#e6db74'
         palette :very_dark      => '#1e0010'
         palette :whitish        => '#f8f8f2'
-        palette :orange         => '#f6aa11'
+        palette :orange         => '#ef8540'
         palette :white          => '#ffffff'
 
         style Generic::Heading,                 :fg => :grey
@@ -72,7 +72,7 @@ module Rouge
               Name::Class,
               Name::Decorator,
               Name::Exception,
-              Name::Function,                   :fg => :bright_green
+              Name::Function,                   :fg => :orange
         style Name::Variable::Class,
               Name::Namespace,
               Name::Entity,
